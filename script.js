@@ -6,8 +6,20 @@ app.use(async(ctx,next)=>{
     await next();
     const ms= Date.now()-start;
     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
-    console.log('ms: %d',ms);
+    console.log('ms working: %d',ms);
+    ctx.body="hdddddi";
 
 });
 
-app.listen(8080);
+
+
+try {
+    app.listen(8085, ()=>{
+        console.log("Ok, server is runing");
+    });
+   
+
+   
+  } catch (error) {
+    console.error('server is not running :', error.message);
+  }
