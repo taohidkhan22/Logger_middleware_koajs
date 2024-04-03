@@ -6,14 +6,11 @@ app.use(async(ctx,next)=>{
     ctx.body='hii';
     return next().then( ()=>{
       const ms= Date.now()-start;
-     
       console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
     });
    
 
 });
-
-
 
 try {
     app.listen(8085, ()=>{
